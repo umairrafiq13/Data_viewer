@@ -1,0 +1,172 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManagement:
+    transition: FadeTransition()
+	Thread:
+	AnotherScreen:
+
+<PushButton@Button>:
+    font_size: 32
+    color: 0,0.42,0.8,1
+    size: 150, 50
+    background_normal: ''
+    background_down: ''
+    background_color: .88,.88,.88,1
+
+<KeypadButton@Button>:
+    font_size: 32
+    color: 0,0.42,0.8,1
+    size: 10,10
+    background_normal: ''
+    background_down: ''
+    background_color: .88,.88,.88,1
+
+
+<Thread>:
+    name: 'thread'
+
+    canvas.before:
+        Color:
+            rgb: 0.16,0.16,0.16
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    canvas:
+
+        Color:
+            rgb: 1,0.4,0
+        Rectangle:
+            size: 450,768
+            pos: 0,0
+
+        Color:
+            rgb: 1,1,1
+        Rectangle:
+            size: 450,650
+            pos: 0,0
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 20,570
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 20,410
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 20,250
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 20,90
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 10,590
+            pos: 20,0
+
+        Color:
+            rgb: 0.32,0.3276,0.3276
+        Rectangle:
+            size: 350,200
+            pos: 600,200
+
+        Color:
+            rgb: 0.32,0.3276,0.3276
+        Rectangle:
+            size: 350,200
+            pos: 600,450
+
+        Color:
+            rgb: 1,1,1
+        Line:
+            width: 2
+            points: 180,355,280,355
+
+    Label:
+        font_size: 48
+        size_hint: 0.1,0.1
+        pos: 150,650
+        text: 'Micro Motion Data'
+
+    Label:
+        color: 1,1,1,1
+        font_size: 42
+        size_hint: 0.1,0.1
+        pos: 100,570
+        text: 'Temperature'
+
+    Label:
+        id: temp
+        color: 1,0.60,0,1
+        font_size: 100
+        size_hint: 0.1,0.1
+        pos: 150,490
+        text: '0'+ u"\xb0"
+
+    Label:
+        font_size: 42
+        size_hint: 0.1,0.1
+        pos: 30,410
+        text: 'Flow'
+
+    Label:
+        font_size: 42
+        size_hint: 0.1,0.1
+        pos: 60,250
+        text: 'Totalizer'
+
+    Label:
+        font_size: 42
+        size_hint: 0.1,0.1
+        pos: 70,90
+        text: 'Inventory'
+
+    TextInput:
+        id: flow
+        font_size: 26
+        size_hint: 0.1,0.1
+        pos: 500, 250
+        background_color: 0.32,0.32,0.32,1
+
+
+
+    TextInput:
+
+        font_size: 32
+        size_hint: 0.1,0.1
+        pos: 500, 270
+        background_color: 0.32,0.32,0.32,1
+
+    Button:
+        on_release: root.start_thread()
+        text: 'Start'
+        font_size: 30
+        size_hint: 0.25,0.1
+        pos: 450,100
+
+
+
+
+<AnotherScreen>:
+    name: "other"
+	FloatLayout:
+		Painter
+		Button:
+			color: 0,1,0,1
+			font_size: 20
+			size_hint: 0.3,0.2
+			text: 'Back Home'
+			on_release: app.root.current = 'main'
+			pos_hint:{'right':1, 'top':1}
