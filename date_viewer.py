@@ -3,11 +3,15 @@ from kivy.lang import Builder
 from kivy.config import Config
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivy.uix.widget import Widget
+from kivy.core.text import LabelBase
 from kivy.graphics import Line
 import paho.mqtt.client as mqtt
 import threading
 from kivy.core.window import Window
 from kivy.uix.image import Image
+
+LabelBase.register(name= 'BigNoodleTooOblique',
+                   fn_regular= 'BigNoodleTooOblique.ttf')
 
 Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 Config.set('graphics', 'width', '1366')
