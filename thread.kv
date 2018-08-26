@@ -25,6 +25,8 @@ ScreenManagement:
 <Thread>:
     name: 'thread'
 
+# ---------------- main canvas ----------------------#
+
     canvas.before:
         Color:
             rgb: 0.16,0.16,0.16
@@ -32,20 +34,52 @@ ScreenManagement:
             size: self.size
             pos: self.pos
 
+#--------------- daughter canvas -------------------#
     canvas:
 
+        # 1st Box (orange rectangle)
         Color:
             rgb: 1,0.4,0
         Rectangle:
             size: 450,768
             pos: 0,0
 
+        # 1st Box (white rectangle)
         Color:
             rgb: 1,1,1
         Rectangle:
             size: 450,650
             pos: 0,0
 
+        # 2nd box (orange rectangle)
+        Color:
+            rgb: 1,0.4,0
+        Rectangle:
+            size: 450,768
+            pos: 500,0
+
+        # 2nd box (white rectangle)
+        Color:
+            rgb: 1,1,1
+        Rectangle:
+            size: 450,650
+            pos: 500,0
+
+        # 3rd box (orange rectangle)
+        Color:
+            rgb: 1,0.4,0
+        Rectangle:
+            size: 450,768
+            pos: 1000,0
+
+        # 3rd box (white rectangle)
+        Color:
+            rgb: 1,1,1
+        Rectangle:
+            size: 450,650
+            pos: 1000,0
+
+        # 1st box (light orange rectangles) -y axis
         Color:
             rgb: 1,0.6,0
         Rectangle:
@@ -76,24 +110,69 @@ ScreenManagement:
             size: 10,590
             pos: 20,0
 
+        # 2nd box (light orange rectangle) -y axis
         Color:
-            rgb: 0.32,0.3276,0.3276
+            rgb: 1,0.6,0
         Rectangle:
-            size: 350,200
-            pos: 600,200
+            size: 10,590
+            pos: 520,0
 
         Color:
-            rgb: 0.32,0.3276,0.3276
+            rgb: 1,0.6,0
         Rectangle:
-            size: 350,200
-            pos: 600,450
+            size: 380,70
+            pos: 520,570
 
         Color:
-            rgb: 1,1,1
-        Line:
-            width: 2
-            points: 180,355,280,355
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 520,410
 
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 520,250
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 520,90
+
+        # 3rd box (light orange rectangles) -y axis
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 10,590
+            pos: 1020,0
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 1020,570
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 1020,410
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 1020,250
+
+        Color:
+            rgb: 1,0.6,0
+        Rectangle:
+            size: 380,70
+            pos: 1020,90
+
+    #contents of first box
     Label:
         font_name: "BigNoodleTooOblique"
         font_size: 72
@@ -128,12 +207,32 @@ ScreenManagement:
         text: 'Flow'
 
     Label:
+        id: flow
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 130,324
+        text: '0'
+
+    Label:
         font_name: "BigNoodleTooOblique"
         font_size: 66
         italic: True
         size_hint: 0.1,0.1
         pos: 60,244
         text: 'Totalizer'
+
+    Label:
+        id: Total
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 130,164
+        text: '0'
 
     Label:
         font_name: "BigNoodleTooOblique"
@@ -143,31 +242,175 @@ ScreenManagement:
         pos: 70,84
         text: 'Inventory'
 
-    TextInput:
+    Label:
+        id: inventory
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 130,4
+        text: '0'
+
+    #contents of 2nd box
+    Label:
+        font_name: "BigNoodleTooOblique"
+        font_size: 72
+        size_hint: 0.1,0.1
+        pos: 650,650
+        text: 'FILLING DATA'
+
+    Label:
+        color: 1,1,1,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        size_hint: 0.1,0.1
+        pos: 600,564
+        text: 'Temperature'
+
+    Label:
+        id: temp
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 650,484
+        text: '0'+ u"\xb0"
+
+    Label:
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 530,404
+        text: 'Flow'
+
+    Label:
         id: flow
-        font_size: 26
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
         size_hint: 0.1,0.1
-        pos: 500, 250
-        background_color: 0.32,0.32,0.32,1
+        pos: 630,324
+        text: '0'
 
-
-
-    TextInput:
-
-        font_size: 32
+    Label:
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        italic: True
         size_hint: 0.1,0.1
-        pos: 500, 270
-        background_color: 0.32,0.32,0.32,1
+        pos: 560,244
+        text: 'Totalizer'
 
-    Button:
-        on_release: root.start_thread()
-        text: 'Start'
-        font_size: 30
-        size_hint: 0.25,0.1
-        pos: 450,100
+    Label:
+        id: Total
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 630,164
+        text: '0'
 
+    Label:
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 570,84
+        text: 'Inventory'
 
+    Label:
+        id: inventory
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 630,4
+        text: '0'
 
+    # contents of 3rd box
+    Label:
+        font_name: "BigNoodleTooOblique"
+        font_size: 72
+        size_hint: 0.1,0.1
+        pos: 1150,650
+        text: 'Micro Motion Data'
+
+    Label:
+        color: 1,1,1,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        size_hint: 0.1,0.1
+        pos: 1100,564
+        text: 'Temperature'
+
+    Label:
+        id: temp
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1150,484
+        text: '0'+ u"\xb0"
+
+    Label:
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1030,404
+        text: 'Flow'
+
+    Label:
+        id: flow
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1130,324
+        text: '0'
+
+    Label:
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1060,244
+        text: 'Totalizer'
+
+    Label:
+        id: Total
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1130,164
+        text: '0'
+
+    Label:
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1070,84
+        text: 'Inventory'
+
+    Label:
+        id: inventory
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1130,4
+        text: '0'
 
 <AnotherScreen>:
     name: "other"
