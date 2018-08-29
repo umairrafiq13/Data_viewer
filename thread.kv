@@ -56,28 +56,28 @@ ScreenManagement:
             rgb: 1,0.4,0
         Rectangle:
             size: 450,768
-            pos: 500,0
+            pos: 450,0
 
         # 2nd box (white rectangle)
         Color:
             rgb: 1,1,1
         Rectangle:
             size: 450,650
-            pos: 500,0
+            pos: 450,0
 
         # 3rd box (orange rectangle)
         Color:
             rgb: 1,0.4,0
         Rectangle:
-            size: 450,768
-            pos: 1000,0
+            size: 470,768
+            pos: 900,0
 
         # 3rd box (white rectangle)
         Color:
             rgb: 1,1,1
         Rectangle:
-            size: 450,650
-            pos: 1000,0
+            size: 470,650
+            pos: 900,0
 
         # 1st box (light orange rectangles) -y axis
         Color:
@@ -115,62 +115,62 @@ ScreenManagement:
             rgb: 1,0.6,0
         Rectangle:
             size: 10,590
-            pos: 520,0
+            pos: 470,0
 
         Color:
             rgb: 1,0.6,0
         Rectangle:
             size: 380,70
-            pos: 520,570
+            pos: 470,570
 
         Color:
             rgb: 1,0.6,0
         Rectangle:
             size: 380,70
-            pos: 520,410
+            pos: 470,410
 
         Color:
             rgb: 1,0.6,0
         Rectangle:
             size: 380,70
-            pos: 520,250
+            pos: 470,250
 
         Color:
             rgb: 1,0.6,0
         Rectangle:
             size: 380,70
-            pos: 520,90
+            pos: 470,90
 
         # 3rd box (light orange rectangles) -y axis
         Color:
             rgb: 1,0.6,0
         Rectangle:
             size: 10,590
-            pos: 1020,0
+            pos: 920,0
 
         Color:
             rgb: 1,0.6,0
         Rectangle:
             size: 380,70
-            pos: 1020,570
+            pos: 920,570
 
         Color:
             rgb: 1,0.6,0
         Rectangle:
             size: 380,70
-            pos: 1020,410
+            pos: 920,410
 
         Color:
             rgb: 1,0.6,0
         Rectangle:
             size: 380,70
-            pos: 1020,250
+            pos: 920,250
 
         Color:
             rgb: 1,0.6,0
         Rectangle:
             size: 380,70
-            pos: 1020,90
+            pos: 920,90
 
     #contents of first box
     Label:
@@ -199,6 +199,15 @@ ScreenManagement:
         text: '0'+ u"\xb0"
 
     Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 90
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 300,484
+        text: 'C'
+
+    Label:
         font_name: "BigNoodleTooOblique"
         font_size: 66
         italic: True
@@ -215,6 +224,16 @@ ScreenManagement:
         size_hint: 0.1,0.1
         pos: 130,324
         text: '0'
+
+    Label:
+        id: flow
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 270,324
+        text: 'KG/HR'
 
     Label:
         font_name: "BigNoodleTooOblique"
@@ -235,6 +254,15 @@ ScreenManagement:
         text: '0'
 
     Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 80
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 290,164
+        text: 'KG'
+
+    Label:
         font_name: "BigNoodleTooOblique"
         font_size: 66
         italic: True
@@ -252,12 +280,21 @@ ScreenManagement:
         pos: 130,4
         text: '0'
 
+    Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 80
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 290,4
+        text: 'KG'
+
     #contents of 2nd box
     Label:
         font_name: "BigNoodleTooOblique"
         font_size: 72
         size_hint: 0.1,0.1
-        pos: 650,650
+        pos: 600,650
         text: 'FILLING DATA'
 
     Label:
@@ -265,62 +302,87 @@ ScreenManagement:
         font_name: "BigNoodleTooOblique"
         font_size: 66
         size_hint: 0.1,0.1
-        pos: 600,564
-        text: 'Temperature'
+        pos: 570,564
+        text: '24hr Totalizer'
 
     Label:
-        id: temp
         color: 1,0.60,0,1
         font_name: "BigNoodleTooOblique"
         font_size: 100
         italic: True
         size_hint: 0.1,0.1
-        pos: 650,484
-        text: '0'+ u"\xb0"
-
-    Label:
-        font_name: "BigNoodleTooOblique"
-        font_size: 66
-        italic: True
-        size_hint: 0.1,0.1
-        pos: 530,404
-        text: 'Flow'
-
-    Label:
-        id: flow
-        color: 1,0.60,0,1
-        font_name: "BigNoodleTooOblique"
-        font_size: 100
-        italic: True
-        size_hint: 0.1,0.1
-        pos: 630,324
+        pos: 580,484
         text: '0'
 
     Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 80
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 750,484
+        text: 'KG'
+
+    Label:
         font_name: "BigNoodleTooOblique"
         font_size: 66
         italic: True
         size_hint: 0.1,0.1
-        pos: 560,244
-        text: 'Totalizer'
+        pos: 570,404
+        text: 'Yest Totalizer'
+
+    Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 580,324
+        text: '0'
+
+    Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 80
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 750,324
+        text: 'KG'
+
+    Label:
+        font_name: "BigNoodleTooOblique"
+        font_size: 66
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 590,244
+        text: 'Recent Totalizer'
+
+    Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 100
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 580,164
+        text: '0'
 
     Label:
         id: Total
         color: 1,0.60,0,1
         font_name: "BigNoodleTooOblique"
-        font_size: 100
+        font_size: 80
         italic: True
         size_hint: 0.1,0.1
-        pos: 630,164
-        text: '0'
+        pos: 750,164
+        text: 'KG'
 
     Label:
         font_name: "BigNoodleTooOblique"
         font_size: 66
         italic: True
         size_hint: 0.1,0.1
-        pos: 570,84
-        text: 'Inventory'
+        pos: 590,84
+        text: 'Current Truck No.'
 
     Label:
         id: inventory
@@ -329,7 +391,7 @@ ScreenManagement:
         font_size: 100
         italic: True
         size_hint: 0.1,0.1
-        pos: 630,4
+        pos: 580,4
         text: '0'
 
     # contents of 3rd box
@@ -337,16 +399,16 @@ ScreenManagement:
         font_name: "BigNoodleTooOblique"
         font_size: 72
         size_hint: 0.1,0.1
-        pos: 1150,650
-        text: 'Micro Motion Data'
+        pos: 1050,650
+        text: 'Sensors'
 
     Label:
         color: 1,1,1,1
         font_name: "BigNoodleTooOblique"
         font_size: 66
         size_hint: 0.1,0.1
-        pos: 1100,564
-        text: 'Temperature'
+        pos: 1000,564
+        text: 'Temp Sensor'
 
     Label:
         id: temp
@@ -355,34 +417,51 @@ ScreenManagement:
         font_size: 100
         italic: True
         size_hint: 0.1,0.1
-        pos: 1150,484
+        pos: 1050,484
         text: '0'+ u"\xb0"
+
+    Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 90
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1200,484
+        text: 'C'
 
     Label:
         font_name: "BigNoodleTooOblique"
         font_size: 66
         italic: True
         size_hint: 0.1,0.1
-        pos: 1030,404
-        text: 'Flow'
+        pos: 1000,404
+        text: 'Pr Sensor-0'
 
     Label:
-        id: flow
         color: 1,0.60,0,1
         font_name: "BigNoodleTooOblique"
         font_size: 100
         italic: True
         size_hint: 0.1,0.1
-        pos: 1130,324
+        pos: 1030,324
         text: '0'
+
+    Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 80
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1180,324
+        text: 'BAR'
 
     Label:
         font_name: "BigNoodleTooOblique"
         font_size: 66
         italic: True
         size_hint: 0.1,0.1
-        pos: 1060,244
-        text: 'Totalizer'
+        pos: 1000,244
+        text: 'Pr Sensor-1'
 
     Label:
         id: Total
@@ -391,26 +470,43 @@ ScreenManagement:
         font_size: 100
         italic: True
         size_hint: 0.1,0.1
-        pos: 1130,164
+        pos: 1030,164
         text: '0'
+
+    Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 80
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1180,164
+        text: 'BAR'
 
     Label:
         font_name: "BigNoodleTooOblique"
         font_size: 66
         italic: True
         size_hint: 0.1,0.1
-        pos: 1070,84
-        text: 'Inventory'
+        pos: 1000,84
+        text: 'Pr Sensor-2'
 
     Label:
-        id: inventory
         color: 1,0.60,0,1
         font_name: "BigNoodleTooOblique"
         font_size: 100
         italic: True
         size_hint: 0.1,0.1
-        pos: 1130,4
+        pos: 1030,4
         text: '0'
+
+    Label:
+        color: 1,0.60,0,1
+        font_name: "BigNoodleTooOblique"
+        font_size: 80
+        italic: True
+        size_hint: 0.1,0.1
+        pos: 1180,4
+        text: 'BAR'
 
 <AnotherScreen>:
     name: "other"

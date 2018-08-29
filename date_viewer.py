@@ -17,8 +17,8 @@ Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 Config.set('graphics', 'width', '1366')
 Config.set('graphics', 'height', '768')
 
-# Window.size = (1440,900)
-# Window.fullscreen = True
+Window.size = (1366,768)
+Window.fullscreen = True
 
 
 
