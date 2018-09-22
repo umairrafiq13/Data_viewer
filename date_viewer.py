@@ -9,6 +9,7 @@ import paho.mqtt.client as mqtt
 import threading
 from kivy.core.window import Window
 from kivy.uix.image import Image
+import json
 
 LabelBase.register(name= 'BigNoodleTooOblique',
                    fn_regular= 'BigNoodleTooOblique.ttf')
@@ -47,8 +48,10 @@ class Thread(Screen):
 
     def on_message(self, client, userdata, msg):
         payload = json.loads(msg.payload)
-        print(payload['sensor1'])
-        self.ids.temp.text = "{}".format(str(msg.payload.decode()))
+        self.ids.sensor1.text = "%.1f"%(float(payload['sensor1']))
+        self.ids.sensor2.text = "%.1f"%(float(payload['sensor2']))
+        self.ids.sensor3.text = "%.1f"%(float(payload['sensor3']))
+        self.ids.sensor4.text = "%.1f"%(float(payload['sensor4']))
 
     def first_thread(self):
         print("started")
