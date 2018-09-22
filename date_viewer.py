@@ -23,8 +23,8 @@ Window.fullscreen = True
 
 
 
-MQTT_SERVER = "192.168.100.6"
-MQTT_PATH = "test_channel"
+MQTT_SERVER = "192.168.100.3"
+MQTT_PATH = "sensors"
 
 
 class Painter(Widget):
@@ -37,18 +37,23 @@ class Painter(Widget):
 
 
 class Thread(Screen):
+    def __init__(self, *args,**kwargs):
+        Screen.__init__(self,**kwargs)
+        self.start_thread()
 
     def on_connect(self, client, userdata, flags, rc):
         print("Connected with result code " + str(rc))
-        client.subscribe("test_channel")
+        client.subscribe("sensors")
 
     def on_message(self, client, userdata, msg):
+        payload = json.loads(msg.payload)
+        print(payload['sensor1'])
         self.ids.temp.text = "{}".format(str(msg.payload.decode()))
 
     def first_thread(self):
         print("started")
         client = mqtt.Client()
-        client.connect("192.168.100.6", 1883, 60)
+        client.connect("192.168.100.3", 1883, 60)
 
         client.on_connect = self.on_connect
         client.on_message = self.on_message
